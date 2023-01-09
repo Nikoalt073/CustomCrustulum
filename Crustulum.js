@@ -20,6 +20,7 @@ var Crustulum = {
                 fragment.appendChild(Crustulum.Menu.toggleButton('blockWrath','Block Wrath Cookies','Prevents wrath cookies from spawning.'));
                 fragment.appendChild(Crustulum.Menu.subheading('Infinite Stuff'));
                 fragment.appendChild(Crustulum.Menu.toggleButton('infiniteCookies','Infinite Cookies','Causes your cookies to constantly regenerate.'));
+                fragment.appendChild(Crustulum.Menu.toggleButton('infiniteLumps','Infinite Sugar Lumps','Causes your sugar lumps to constantly regenerate.'));
                 fragment.appendChild(Crustulum.Menu.toggleButton('infiniteMagic','Infinite Magic','Causes your Grimoire magic to recharge almost instantly'));
                 fragment.appendChild(Crustulum.Menu.toggleButton('infiniteSwaps','Infinite Swaps','Causes your Pantheon swaps to regenerate almost instantly.'));
                 fragment.appendChild(Crustulum.Menu.subheading('Mini-game Enhancers'));
@@ -398,6 +399,14 @@ var Crustulum = {
             'onTick': ()=>{
                 if (!Crustulum.getConfig('infiniteCookies')) return;
                 Game.cookies = Game.cookiesEarned;
+            },
+        },
+        'infiniteLumps': {
+            'intervalId': null,
+            'rate': 100,
+            'onTick': ()=>{
+                if (!Crustulum.getConfig('infiniteLumps')) return;
+                Game.lumps = Game.lumpsTotal;
             },
         },
         'infiniteMagic': {
