@@ -34,6 +34,7 @@ var Crustulum = {
                 fragment.appendChild(Crustulum.Menu.actionButton('spawnGoldenFrenzy','Spawn a Frenzy Cookie','Spawns a golden cookie that will cause a frenzy.', Crustulum.Actions.spawnGolden));
                 fragment.appendChild(Crustulum.Menu.actionButton('spawnGoldenDragonflight','Spawn a Dragonflight Cookie','Spawns a golden cookie that will cause a dragonflight.', Crustulum.Actions.spawnGoldenDragonflight));
                 fragment.appendChild(Crustulum.Menu.actionButton('giveSugarLump','Give Sugar Lump','Gives you a sugar limp.', Crustulum.Actions.giveSugarLump));
+                fragment.appendChild(Crustulum.Menu.actionButton('giveSugarLump100','Give 100 Sugar Lumps','Gives you 100 sugar lumps.', Crustulum.Actions.giveSugarLump100));
                 fragment.appendChild(Crustulum.Menu.actionButton('giveCookies','Give Cookies','Gives you the most cookies you can have without getting the cheated cookies achievement.', Crustulum.Actions.giveCookies));
                 fragment.appendChild(Crustulum.Menu.subheading('Mini-games'));
                 fragment.appendChild(Crustulum.Menu.actionButton('refillMagic','Refill Magic','Refill all of your Grimoire\'s magic.', Crustulum.Actions.refillMagic));
@@ -82,6 +83,9 @@ var Crustulum = {
         },
         giveSugarLump: ()=>{
             Game.gainLumps(1);
+        },
+        giveSugarLump100: ()=>{
+            Game.gainLumps(100);
         },
         giveCookies: ()=>{
             Game.cookies = Game.cookiesEarned;
